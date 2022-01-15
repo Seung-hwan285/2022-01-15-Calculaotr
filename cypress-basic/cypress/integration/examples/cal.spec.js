@@ -1,7 +1,7 @@
 // TODO 디스플레이 테스트
 // -[x] 숫자 클릭하면 디스플레이에 나타나는지
 // -[x] 연산자를 클릭하면 디스플레이에 나타나는지
-// -[] 네자리 이상의 숫자 입력하면 경고
+// -[x] 네자리 이상의 숫자 입력하면 경고
 // -[] 숫자를 입력하지않고 연산자 클릭하면 경고
 
 
@@ -30,4 +30,28 @@ describe("login", () => {
 
 
 
+    it('네자리 이상의 숫자가 입력됐을 경우 경고메세지가 뜬다.', () => {
+
+        const stub = cy.stub();
+        cy.on('window:alert', stub);
+
+
+        cy.get('.digits').contains('1').click();
+        cy.get('#total').should('have.text', '1');
+
+        cy.get('.digits').contains('2').click();
+        cy.get('#total').should('have.text', '12');
+
+        cy.get('.digits').contains('3').click();
+        cy.get('#total').should('have.text', '123');
+
+
+        cy.get('.digits')
+            .contains('1')
+            .click()
+            .then(()=>{
+               expect(stub.getCall(0)).to.be.calledWith('3자리 이하만 입력');
+            });
+        cy.get('#total').should('have.text','123');
+    });
 });
