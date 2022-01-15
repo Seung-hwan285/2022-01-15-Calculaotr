@@ -6,10 +6,8 @@
 // -[] 계산 결과를 표현할때 소수점 이하는 버림한다.
 
 
+
 const $=(s)=>document.querySelector(s);
 
-const number = $(".digits");
-const total =$("#total");
-
-
+const $total = document.querySelector('#total');
 
