@@ -9,5 +9,11 @@
 
 const $=(s)=>document.querySelector(s);
 
-const $total = document.querySelector('#total');
+const total = $("#total");
+const digits = $(".digits");
 
+
+
+digits.addEventListener("click",(e)=>{
+    total.innerText= e.target.innerText;
+});

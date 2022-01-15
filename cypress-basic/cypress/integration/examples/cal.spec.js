@@ -14,12 +14,13 @@ describe("login", () => {
     it("숫자버튼을 누르면 디스플레이 테스트", () => {
         cy.get("#total").then(input=>{
 
-            cy.get(".digits").contains("1").click();
+            const inputValue = input.text();
+            console.log(inputValue);
 
+            cy.get(".digits").contains("1").click();
             cy.get("#total").should("have.text","1");
         });
     });
 
 
-    it("")
 });
