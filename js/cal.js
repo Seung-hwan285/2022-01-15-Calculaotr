@@ -28,44 +28,29 @@ operation.addEventListener("click",(e)=>{
 // 1. 특수문자 분리
 // 2. 숫자 길이 따로 빼기
 // 3. 숫자길이 3보다 크면 경고창 발생
-// const isVaild =()=>{
-//
-//
-//
-//     // 연산자없을때
-//     if(!oper){
-//         return inputValue.length < 3;
-//     }
-//
-// }
-
 
 digits.addEventListener("click",(e)=> {
-    const inputValue = total.innerText;
+    let inputValue = total.innerText;
     const oper = inputValue.split('').find(v=>OPEARLIST.includes(v));
 
 
-    console.log(inputValue);
-    console.log(oper);
+    if(oper){
+        inputValue=inputValue.split(oper)[1];
+        console.log(inputValue);
+    }
 
 
     if(inputValue.length<3){
+
         if (total.innerText === "0") {
             total.innerText = e.target.innerText;
         } else {
             total.innerText += e.target.innerText;
-
         }
-
     }
     else{
         return alert("3자리 이하만 입력");
     }
-
-
-
-
-
 
 });
 
