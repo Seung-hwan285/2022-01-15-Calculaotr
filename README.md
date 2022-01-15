@@ -1,7 +1,8 @@
 # 2022-01-15-Calculaotr
 
-### 회고록
-1. Cypress alert 테스트
+## 어려운점
+
+### 1. Cypress alert 테스트
 이상이 없는 코드인데 계속 테스트가 안되는 현상이 발생
 
 
