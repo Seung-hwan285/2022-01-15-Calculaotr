@@ -48,3 +48,23 @@ cal.js 오타로인한 테스트 오류
 
 ```
 
+
+## 2. Cypress alert 연산자 다음 숫자 테스트
+연산자 다음 숫자를 입력하면 3자리 제한이 걸려서 예외가 발생하는 상황이 생겼습니다.
+여기서 생각해본 것은 연산자를 제거하고 그값을 inputValue에 넣어서 빈값으로 만드는 것이였습니다.
+
+
+
+### 해결방안
+inputValue에 해당하는 연산자를 가져오고 연산자를 제거한후 빈값으로만들고 값을 추가하는 방식입니다.
+```javascript
+ const oper = inputValue.split('').find(v=>OPEARLIST.includes(v));
+
+
+    if(oper){
+        // inputValue.split(oper)[0] 하면 앞에 숫자가 제거거[1]하면 연산자제거 하고 안에 숫자추가
+        inputValue=inputValue.split(oper)[1];
+        console.log(inputValue);
+
+    }
+```
