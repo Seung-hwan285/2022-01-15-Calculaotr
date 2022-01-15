@@ -15,11 +15,29 @@ const operation =$(".operations");
 
 
 
+function App() {
+
+
 operation.addEventListener("click",(e)=>{
-   total.innerText = e.target.innerText;
-   console.log(total.innerText);
+
+
+    total.innerText += e.target.innerText;
+
 });
+
 digits.addEventListener("click",(e)=>{
-    total.innerText= e.target.innerText;
-    console.log(total.innerText);
+
+    if(total.innerText ==="0"){
+        total.innerText = e.target.innerText;
+    }
+    else{
+        total.innerText += e.target.innerText;
+
+    }
+
 });
+
+
+}
+
+App();

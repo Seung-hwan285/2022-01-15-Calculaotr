@@ -13,20 +13,21 @@ describe("login", () => {
 
     it("숫자버튼을 누르면 디스플레이 테스트", () => {
         cy.get("#total").then(input=>{
-            
+
             cy.get(".digits").contains("1").click();
             cy.get("#total").should("have.text","1");
         });
     });
 
-    it("연산자 누르면 디스플레이 테스트",()=>{
+    it("연산자 누르면 디스플레이 숫자 동시에 테스트",()=>{
        cy.get("#total").then(input=>{
 
-
-         cy.get(".operation").contains("/").click();
-         cy.get("#total").should("have.text","/");
+            cy.get(".digits").contains("1").click();
+            cy.get(".operation").contains("/").click();
+            cy.get("#total").should("have.text","1"+"/");
        });
     });
+
 
 
 });
