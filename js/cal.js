@@ -11,9 +11,15 @@ const $=(s)=>document.querySelector(s);
 
 const total = $("#total");
 const digits = $(".digits");
+const operation =$(".operations");
 
 
 
+operation.addEventListener("click",(e)=>{
+   total.innerText = e.target.innerText;
+   console.log(total.innerText);
+});
 digits.addEventListener("click",(e)=>{
     total.innerText= e.target.innerText;
+    console.log(total.innerText);
 });
