@@ -33,9 +33,6 @@ operation.addEventListener("click",(e)=>{
         total.innerText += e.target.innerText;
     }
 
-
-
-
 });
 
 digits.addEventListener("click",(e)=> {
@@ -49,7 +46,6 @@ digits.addEventListener("click",(e)=> {
         console.log(inputValue);
 
     }
-
 
     if(inputValue.length<3){
 

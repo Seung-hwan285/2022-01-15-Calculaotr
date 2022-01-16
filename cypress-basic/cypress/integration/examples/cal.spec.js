@@ -97,11 +97,15 @@ describe('login', () => {
 
     it('삭제 버튼을 누르면 숫자나 연산자 1개가 삭제되는지 테스트',()=>{
         cy.get('.digits').contains('1').click();
+
+        cy.get('.operation').contains('/').click();
+        cy.get('.delete').click();
         cy.get('.delete').click();
         cy.get('.digits').contains('2').click();
-
 
        cy.get('#total').should('have.text','2');
 
     });
+
+
 });
