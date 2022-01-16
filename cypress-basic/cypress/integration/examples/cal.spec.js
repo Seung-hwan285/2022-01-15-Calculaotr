@@ -2,7 +2,8 @@
 // -[x] 숫자 클릭하면 디스플레이에 나타나는지
 // -[x] 연산자를 클릭하면 디스플레이에 나타나는지
 // -[x] 네자리 이상의 숫자 입력하면 경고
-// -[] 숫자를 입력하지않고 연산자 클릭하면 경고
+// -[x] 숫자를 입력하지않고 연산자 클릭하면 경고
+// -[] delet 버튼 누르면 삭제
 
 
 describe('login', () => {
@@ -81,5 +82,16 @@ describe('login', () => {
         }
 
         cy.get('#total').should('have.text','111X111');
+    });
+
+
+    it('숫자를 입력하지않고 연산자 입력하면 경고메세지 테스트',()=>{
+        const stub = cy.stub();
+        cy.on('window:alert',stub);
+        cy.get(".operation").contains("/")
+            .click()
+            .then(()=>{
+               expect(stub.getCall(0)).to.be.calledWith('숫자먼저 입력해주세요');
+            });
     });
 });

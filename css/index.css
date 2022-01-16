@@ -15,7 +15,7 @@
     display: grid;
     grid-template-areas:
 		'total total total total'
-		'modif modif modif oper'
+		'modif modif del oper'
 		'digit digit digit oper'
 		'digit digit digit oper'
 		'digit digit digit oper'
@@ -28,6 +28,9 @@
 button {
     font-size: 2rem;
 
+}
+.delete button{
+    background-color: #ccc;
 }
 
 .modifiers button {
