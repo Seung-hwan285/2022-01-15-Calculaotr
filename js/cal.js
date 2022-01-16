@@ -18,24 +18,7 @@ const delet = $(".delete");
 
 const OPEARLIST = ["/","+","-","X"];
 
-
-
-
-operation.addEventListener("click",(e)=>{
-
-    let inputValue = total.innerText;
-
-    if(isNaN(Number(inputValue[inputValue.length-1]))){
-        alert('숫자먼저 입력해주세요');
-    }
-    else{
-
-        total.innerText += e.target.innerText;
-    }
-
-});
-
-digits.addEventListener("click",(e)=> {
+const digitsWork=(e)=>{
     let inputValue = total.innerText;
     const oper = inputValue.split('').find(v=>OPEARLIST.includes(v));
 
@@ -58,15 +41,29 @@ digits.addEventListener("click",(e)=> {
     else{
         alert("3자리 이하만 입력");
     }
+}
 
-});
+const operationWork =(e)=>{
+    let inputValue = total.innerText;
 
+    if(isNaN(Number(inputValue[inputValue.length-1]))){
+        alert('숫자먼저 입력해주세요');
+    }
+    else{
+        total.innerText +=e.target.innerText;
+    }
+}
 
-delet.addEventListener("click",(e)=>{
+const deletWork=()=>{
     const inputValue = total.innerText;
     // 오른쪽부터 삭제되게
     total.innerText = inputValue.slice(0,-1);
-});
+}
+
+digits.addEventListener("click",digitsWork);
+operation.addEventListener("click",operationWork);
+delet.addEventListener("click",deletWork);
+
 
 
 
