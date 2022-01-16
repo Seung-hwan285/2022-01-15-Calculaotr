@@ -4,7 +4,7 @@
 // -[x] delete 버튼을 누르면 삭제된다.
 // -[x] AC 버튼을 누르면 초기화한다.
 // -[x] 숫자는 한번에 최대 3자리 수까지 입력 가능하다.
-// -[] 계산 결과를 표현할때 소수점 이하는 버림한다.
+// -[x] 계산 결과를 표현할때 소수점 이하는 버림한다.
 
 
 
@@ -94,7 +94,7 @@ const calStart =()=>{
             total.innerText=String(result);
             break
         case '/':
-            result=n1/n2;
+            result=Math.floor(n1/n2);
             total.innerText=String(result);
             break
 
