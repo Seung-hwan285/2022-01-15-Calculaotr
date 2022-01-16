@@ -3,7 +3,7 @@
 // -[x] 연산자를 클릭하면 디스플레이에 나타나는지
 // -[x] 네자리 이상의 숫자 입력하면 경고
 // -[x] 숫자를 입력하지않고 연산자 클릭하면 경고
-// -[] delet 버튼 누르면 삭제
+// -[x] delet 버튼 누르면 삭제
 
 
 describe('login', () => {
@@ -105,6 +105,23 @@ describe('login', () => {
 
        cy.get('#total').should('have.text','2');
 
+    });
+
+    it("사칙연산 테스트",()=>{
+       // cy.get('.digits').contains('1').click();
+       // cy.get('.operation').contains('+').click();
+       // cy.get('.digits').contains('2').click();
+       //
+       // cy.get('.operation').contains('=').click();
+
+        cy.get('.digits').contains('3').click();
+        cy.get('.operation').contains('-').click();
+        cy.get('.digits').contains('2').click();
+
+        cy.get('.operation').contains('=').click();
+
+
+        cy.get('#total').should('have.text','1');
     });
 
 
