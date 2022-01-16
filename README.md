@@ -1,4 +1,4 @@
-# 2022-01-15-Calculaotr
+# 2022-01-15-Calculator
 
 ## 어려운점
 
