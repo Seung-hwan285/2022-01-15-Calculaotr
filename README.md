@@ -68,3 +68,15 @@ inputValue에 해당하는 연산자를 가져오고 연산자를 제거한후 �
 
     }
 ```
+
+## 3. Cypress =버튼누르면 연산은되지만 끝에  =나오는 현상
+계속 =버튼을 누르면 계산은 되지만 =가 옆에붙어서 값이 나오는 현상이 생겼습니다.
+
+### 해결방안
+좀더 생각을 해보니 total.innerText에 '='가 나오면 return 을 해서 나오지않게 return을 시켜주면 되는 문제였습니다.
+```javascript
+    if(e.target.innerText ==='='){
+        return;
+    }
+
+```
