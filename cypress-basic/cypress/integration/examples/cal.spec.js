@@ -4,6 +4,7 @@
 // -[x] 네자리 이상의 숫자 입력하면 경고
 // -[x] 숫자를 입력하지않고 연산자 클릭하면 경고
 // -[x] delet 버튼 누르면 삭제
+// -[] AC 버튼 누르면 초기화
 
 
 describe('login', () => {
@@ -122,6 +123,13 @@ describe('login', () => {
 
 
         cy.get('#total').should('have.text','1');
+    });
+
+    it("AC 버튼 누르면 초기화 테스트",()=>{
+       cy.get('.digits').contains('1').click();
+       cy.get('.modifiers').click();
+
+       cy.get('#total').should('have.text',"");
     });
 
 
