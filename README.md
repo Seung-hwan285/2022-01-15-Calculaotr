@@ -1,5 +1,8 @@
 # 2022-01-15-Calculator
 
+### BDD Assertions
+https://docs.cypress.io/guides/references/assertions#Chai
+
 ## 어려운점
 
 ### 1. Cypress alert 테스트
